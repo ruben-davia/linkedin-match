@@ -16,7 +16,7 @@ Welcome to **LinkedIn Matchmaker** — a playful co-founder matchmaking tool tha
 
 ## 🛠️ Requirements
 
-- Python 3.9+
+- Python 3.11+
 - See `requirements.txt` for dependencies
 
 ---
