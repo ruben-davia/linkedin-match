@@ -2,7 +2,7 @@ from langchain_tavily import TavilySearch
 from davia import Davia
 from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage, SystemMessage
-from langchain_google_vertexai import ChatVertexAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from pydantic import BaseModel
 from classes import PersonInfo, CardTitle, Card, StartupIdea, MatchResult
 from typing import List
@@ -11,8 +11,8 @@ import asyncio
 load_dotenv()
 
 
-model = ChatVertexAI(
-    model_name="gemini-2.0-flash-lite-001",
+model = ChatGoogleGenerativeAI(
+    model="gemini-2.0-flash-lite",
 )
 
 
@@ -57,7 +57,6 @@ Output should be structured, give as much detailed as possible, and be ready to 
                 content=f"Here is the information I found on the internet about {name_person}: {info_about_person}"
             ),
         ],
-        stream=False,
     )
     return response
 
@@ -92,7 +91,6 @@ Write in English. Avoid dry or formal tones — aim for addictive and scroll-wor
                 content=f"Here are the profiles to compare: {profile1} and {profile2}"
             ),
         ],
-        stream=False,
     )
 
     return card_content
@@ -123,7 +121,6 @@ def find_startup_ideas(profile1: str, profile2: str):
                 content=f"Here are the profiles to compare: {profile1} and {profile2}"
             ),
         ],
-        stream=False,
     )
     return startup_idea
 
