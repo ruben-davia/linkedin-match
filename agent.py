@@ -77,11 +77,13 @@ def create_card_content(profile1: PersonInfo, profile2: PersonInfo, card_title: 
             SystemMessage(
                 content=f""" You're building a fun, addictive co-founder matchmaking app.
 
-Given the two profiles below, generate a playful, witty comparison card titled {card_title}.
+Given the two profiles below, generate a playful, witty, and truly unique comparison card titled {card_title}.
 
 The card must include:
 	•	A score from 0 to 100 (how well they match on that specific dimension)
 	•	A short, funny insight (like something you'd see on a dating app, but professional). Do not mention the score in the insight. 
+
+IMPORTANT: Multiple cards for different card titles are generated in parallel. You must ensure that each card is uniquely and specifically adapted to its own card title and dimension. 
 
 Keep it light, human, and clever — but still grounded in the data.
 
