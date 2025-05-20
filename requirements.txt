@@ -1,6 +1,4 @@
-python-dotenv==1.0.0
+python-dotenv
 langchain-tavily
 langchain-google-genai
-pydantic
-asyncio
 davia 
